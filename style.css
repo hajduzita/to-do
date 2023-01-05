@@ -1,0 +1,249 @@
+/* Variables */
+:root {
+    --red: #e93a54;
+    --green: #54ae79;
+    --bg: #212221;
+    --font: #f5f5f5;
+    --fontDark: rgb(222, 222, 222);
+    --darkBlack: rgb(20, 20, 20);
+    --darkGrey: rgb(55, 55, 55);
+    --lightGrey: rgb(162, 162, 162);
+    --todoButton: rgb(70, 70, 70);
+}
+
+
+/* DEFAULT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--font);
+    min-height: 100vh;
+}
+
+/* HEADER*/
+header {
+    background-color: var(--darkBlack);
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px dashed var(--darkGrey);
+    border-width: 3px;
+}
+
+header .fa-list-check {
+    color:var(--lightGrey);
+}
+
+header, h2 {
+    padding-left: 15px;
+}
+
+/* NEW TODO */
+form {
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 15px 15px;
+}
+
+.new {
+    position: relative;
+}
+
+form p {
+    font-size: 14px;
+    padding-bottom: 7px;
+}
+
+.todo-button {
+    background-color: var(--todoButton);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.todo-button:hover {
+   background-color: var(--darkGrey);
+   color:  var(--darkBlack);
+   cursor: pointer;
+}
+
+
+.fa-pen {
+    position: absolute;
+    background-color: white;
+    color:  var(--darkBlack);
+    padding: 5px 12px 5px 5px;
+    bottom: 40px;
+    left: 10px;
+    border-right: 1px dotted var(--darkGrey);
+    border-width: 2px;
+}
+
+form input {
+    min-width: 500px;
+    background-color: white;
+    padding: 10px 10px 10px 50px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    border: none;
+}
+
+form button {
+    background-color: white;
+    font-size: 14px;
+    border: none;
+}
+
+.max-counter {
+   padding-top: 10px;
+   text-align: right;
+   padding-right: 10%;
+}
+
+.counter, .max-counter p {
+    color: var(--lightGrey);
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*TODO LIST*/
+.todo-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top: 1px dashed var(--darkGrey);
+    border-width: 3px;
+}
+
+h3 {
+    color: var(--fontDark);
+    letter-spacing: 1px;
+    margin: 40px 0 20px 0;
+}
+
+.todo-list {
+    min-width: 500px;
+    list-style: none;
+}
+
+.todo {
+    color: var(--fontDark);
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid var(--darkGrey);
+    border-radius: 50px;
+    transition: all 0.3s ease; /* activated when we click check button */
+}
+
+.todo-item {
+    flex: 1;
+}
+
+.empty-list {
+    color: var(--lightGrey);
+    font-style: italic;
+    font-size: 10px;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.complete-btn, .trash-btn {
+    background-color: var(--darkGrey);
+    padding: 10px;
+    border: none;
+}
+
+.complete-btn {
+    color: var(--green);
+}
+
+.complete-btn:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+.trash-btn {
+    color: var(--red);
+    border-radius: 0 50px 50px 0;
+}
+
+.trash-btn:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+
+/* 
+    if you click on it, it will delete in deleteCheck function, because
+    we ignore to click on <i> tag in <button>.
+    clicking on <i> tag and delete function doesn't work, unless pointer-event: none
+*/
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    padding: 10px;
+    opacity: 0.5;
+}
+
+.collapse {
+    transform: translateY(1rem) rotateZ(10deg);
+    opacity: 0;
+}
+
+/* Select */
+
+select {
+    position: relative;
+    color: var(--darkGrey);
+    font-weight: 500;
+    font-size: 12px;
+    padding: 10px 50px 10px 10px;
+    border: none;
+    border-radius: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.select {
+    position: relative;
+    overflow: hidden;  
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    bottom: 39px;
+    right: 7px;
+    color:  var(--darkBlack);
+    pointer-events: none;
+}
+
+

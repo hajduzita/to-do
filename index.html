@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Typo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-list-check"></i>
+        <h2>My todos</h2>
+    </header>
+    <form>
+        <div class="new">
+            <p>Add new todo</p>
+            <i class="fa-solid fa-pen"></i>
+            <input type="text" class="todo-input" maxlength="50">
+            <button class="todo-button" type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="max-counter">
+                <p><span class="counter">0</span>/50</p>
+            </div>
+        </div>
+        <div class="select">
+            <p>Search todos</p>
+            <select name="todos" class="todo-filter">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+            <div class="max-counter">
+                <p><span class="filter-counted">0</span>/<span class="filter-counter">0</p>
+            </div>
+        </div>
+    </form>
+    <div class="todo-container">
+        <h3>List</h3>
+        <p class="empty-list">List is empty</p>
+        <ul class="todo-list"></ul>
+    </div>
+    <script src="app.js"></script>
+    <!-- Generated todo item-->
+    <!-- <ul class="todo-list">
+        <div class="todo">
+            <li class="todo-item"></li>
+            <button class="complete-btn"><i class="fa-solid fa-check"></i></button>
+            <button class="trash-btn"><i class="fa-solid fa-trash"></i></button>
+        </div>
+    </ul> -->
+</body>
+</html>
